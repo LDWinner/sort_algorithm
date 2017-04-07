@@ -42,6 +42,8 @@ void merge(int *data,int l,int m,int r)
             k++;
         }
     }
+    delete [] a;
+    delete [] b;
 }
 
 void merge_sort(int *data,int l,int r)
