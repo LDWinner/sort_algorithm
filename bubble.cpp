@@ -4,16 +4,12 @@ using namespace std;
 
 void bubble(int *data,int size)
 {
-    for(int i = 0;i < size - 1;i++)
+    for(int i = 0; i < size; ++i)
     {
-        for(int j = 1; j < size - i;j++)
+        for(int j = 1; j < size - i;++j)
         {
             if(data[j - 1] > data[j])
-            {
-                data[j] = data[j] ^ data[j - 1];
-                data[j - 1] = data[j] ^ data[j - 1];
-                data[j] = data[j] ^ data[j - 1];
-            }
+                swap(data[j - 1],data[j]);
         }
     }
 }
