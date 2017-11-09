@@ -5,21 +5,23 @@ using namespace std;
 int partition(int *data,int l,int r)
 {
     int key = data[l];
-    int i = l;
-    int j = r;
-    while(i < j)
+    while(l < r)
     {
-        while (data[j] > key && i < j) {
-            --j;
+        while(data[r] > key && l < r)
+        {
+            --r;
         }
-        data[i] = data[j];
-        while (data[i] <= key && i < j) {
-            ++i;
+        //data[l] = data[r];
+        swap(data[l],data[r]);
+        while(data[l] <= key && l < r)
+        {
+            ++l;
         }
-        data[j] = data[i];
+        swap(data[l],data[r]);
+        //data[r] = data[l];
     }
-    data[i] = key;
-    return i;
+   // data[l] = key;
+    return l;
 }
 
 void quick_sort(int *data,int l,int r)
